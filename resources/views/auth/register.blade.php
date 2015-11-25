@@ -1,5 +1,5 @@
 @extends('master')
-@section('title','Z-Library:: All Books')
+@section('title','Z-Library:: Register')
 @section('content-title','Register')
 @section('content')
 {!! Form::open(['method' => 'POST' , 'url' =>'auth/register']) !!}
@@ -25,6 +25,15 @@
         {!! Form::label('password_confirmation', 'Password Confirmation') !!}
         {!! Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required']) !!}
         <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+    </div>
+
+    <div class="form-group">
+        <div class="checkbox @if($errors->first('admin')) has-error @endif">
+            <label for="admin">
+                {!! Form::checkbox('admin', null, 1, ['id' => 'admin']) !!} Become Admin
+            </label>
+        </div>
+        <small class="text-danger">{{ $errors->first('admin') }}</small>
     </div>
 
     {!! Form::submit('Register', ['class' => 'btn btn-primary text-center']) !!}

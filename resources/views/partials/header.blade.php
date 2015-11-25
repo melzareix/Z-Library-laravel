@@ -34,8 +34,11 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/books">Books</a></li>
                 @if (Auth::check())
+                @if(Auth::user()->admin)
+                    <li><a href="/books/create">Add Book</a></li>
+                @else
                 <li><a href="/books/borrowed">My Books</a></li>
-                <li><a href="/books/create">Add Book</a></li>
+                @endif
                 @endif
             </ul>
             @if (Auth::check())

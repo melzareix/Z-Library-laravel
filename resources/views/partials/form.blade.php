@@ -8,7 +8,7 @@
     {!! Form::text('author', null, ['class' => 'form-control', 'required' => 'required']) !!}
     <small class="text-danger">{{ $errors->first('author') }}</small>
 </div>
-<div class="form-group @if($errors->first('description')) has-error @endif">
+<div class="form-group @if($errors->first('description')) has-error @endif ">
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description', null, ['class' => 'form-control', 'required' => 'required']) !!}
     <small class="text-danger">{{ $errors->first('description') }}</small>

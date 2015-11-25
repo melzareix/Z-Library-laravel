@@ -1,5 +1,5 @@
 @extends('master')
-@section('title','Z-Library:: All Books')
+@section('title','Z-Library:: Login')
 @section('content-title','Login')
 @section('content')
 {!! Form::open(['method' => 'POST' , 'url' =>'auth/login']) !!}

@@ -19,6 +19,9 @@ class BooksController extends Controller
      */
     public function __construct(){
     $this->middleware('auth',['except'=>'index']);
+    //$this->middleware('admin',['uses'=>'create']);
+   // $this->middleware('admin',['uses'=>'edit']);
+
     }
     public function index()
     {
@@ -94,16 +97,19 @@ class BooksController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $book = Book::findOrFail($id);
         $book->update($request->all());
         return redirect('/');
     }
 
     public function borrowed(){
-        $books = User::find(Auth::user()->id);
-        $books = $books->borrowed;
-        return view('books.borrowed',compact('books'));
+
+        if(!Auth::User()->admin){
+            $books = User::find(Auth::user()->id);
+            $books = $books->borrowed;
+            return view('books.borrowed',compact('books'));
+        }
+        return redirect('/');
     }
 
     public function borrow($id){

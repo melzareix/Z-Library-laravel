@@ -29,6 +29,6 @@ class CreatePivotBooksBorrowedTable extends Migration
      */
     public function down()
     {
-        Schema::drop('borrowed');
+        Schema::drop('book_user');
     }
 }
