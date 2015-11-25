@@ -19,8 +19,7 @@ class BooksController extends Controller
      */
     public function __construct(){
     $this->middleware('auth',['except'=>'index']);
-    //$this->middleware('admin',['uses'=>'create']);
-   // $this->middleware('admin',['uses'=>'edit']);
+    $this->middleware('admin',['only'=>['create','edit']]);
 
     }
     public function index()

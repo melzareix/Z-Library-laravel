@@ -20,6 +20,12 @@
             table th, table td { overflow: hidden; }
 
         }
+        .home-desc{
+            max-height: 160px;
+            text-wrap: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     </style>
 </head>
 <body>

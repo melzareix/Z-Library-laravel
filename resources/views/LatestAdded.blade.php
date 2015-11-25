@@ -21,7 +21,7 @@
        <div class="caption">
         <h3>{{$book->name}}</h3>
         <p class="author">{{$book->author}}</p>
-        <p>{{$book->description}}</p>
+        <p class="home-desc">{{$book->description}}</p>
         <p><a href="{{url('/books',$book->id)}}" class="btn btn-default" role="button">Read more</a></p>
         </div>
       </div>
